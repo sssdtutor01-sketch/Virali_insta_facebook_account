@@ -18,9 +18,10 @@
     border-bottom: 9px solid #138808; position: relative;
   }
   .watermark {
-    position:absolute; top:44%; left:50%; transform:translate(-50%,-50%) rotate(-18deg);
-    font-size:150px; font-weight:900; color:#ff993312; letter-spacing:6px; pointer-events:none;
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:68%; opacity:0.07; pointer-events:none; z-index:0;
   }
+  .watermark img { width:100%; height:auto; display:block; }
   .header { display: flex; align-items: center; justify-content: space-between; gap: 16px; position:relative; z-index:1; }
   .logo-box { display:flex; align-items:center; gap:14px; }
   .logo {
@@ -72,10 +73,10 @@
   .sign .line { border-top:1px solid #333; width:190px; margin-bottom:4px; }
   .slogan { text-align:center; font-weight:800; color:#138808; font-size:16px; margin-top:20px; position:relative; z-index:1; }
 
-  .gallery-title { text-align:center; font-size:22px; color:#c1121f; margin:6px 0 4px; letter-spacing:1px; }
-  .gallery-sub { text-align:center; font-size:13px; color:#555; margin-bottom:18px; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+  .gallery-title { text-align:center; font-size:22px; color:#c1121f; margin:6px 0 4px; letter-spacing:1px; position:relative; z-index:1; }
+  .gallery-sub { text-align:center; font-size:13px; color:#555; margin-bottom:18px; position:relative; z-index:1; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; position:relative; z-index:1; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; position:relative; z-index:1; }
   .card { border:2px solid #FF9933; border-radius:8px; overflow:hidden; background:#fffaf3; }
   .card .imgbox {
     height:150px; background:#fde8cf; display:flex; align-items:center; justify-content:center;
@@ -87,7 +88,7 @@
     padding:7px 10px; font-size:11.5px; color:#333; font-weight:600; text-align:center;
     border-top:1px solid #f0d9bd; min-height:32px;
   }
-  .qrwrap { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .qrwrap { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:6px; position:relative; z-index:1; }
   .qr { text-align:center; }
   .qr img { width:120px; height:120px; border:2px solid #FF9933; border-radius:8px; padding:4px; background:#fff; }
   .qr .lbl { font-size:12.5px; font-weight:700; color:#0b2e59; margin-top:6px; }
@@ -99,7 +100,7 @@
 
 <!-- ========================= PAGE 1 ========================= -->
 <div class="page">
-  <div class="watermark">BJP</div>
+  <div class="watermark"><img src="bjp-logo.png" alt=""></div>
 
   <div class="header">
     <div class="logo-box">
@@ -201,6 +202,7 @@
 
 <!-- ========================= PAGE 2 ========================= -->
 <div class="page pagebreak">
+  <div class="watermark"><img src="bjp-logo.png" alt=""></div>
   <h1 class="gallery-title">वरिष्ठ नेतृत्व के साथ सहभागिता</h1>
   <div class="gallery-sub">माननीय मुख्यमंत्री, मंत्रीगण, विधायक एवं संगठन के वरिष्ठ पदाधिकारियों के साथ</div>
 
@@ -236,6 +238,7 @@
 
 <!-- ========================= PAGE 3 ========================= -->
 <div class="page pagebreak">
+  <div class="watermark"><img src="bjp-logo.png" alt=""></div>
   <h1 class="gallery-title">वायरल पोस्ट / रील एवं कार्यक्रम</h1>
   <div class="gallery-sub">सोशल मीडिया पर लोकप्रिय कार्य — QR स्कैन कर सीधे देखें</div>
 
