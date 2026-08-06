@@ -53,10 +53,10 @@ def left_border(paragraph, color, size=24):
 
 def section_head(text):
     p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(8); p.paragraph_format.space_after = Pt(4)
-    shade(p, LIGHT_SAFF); left_border(p, SAFFRON)
+    p.paragraph_format.space_before = Pt(9); p.paragraph_format.space_after = Pt(5)
+    shade(p, SAFFRON); left_border(p, GREEN, size=32)
     r = p.add_run(text); r.bold = True; r.font.size = Pt(13)
-    r.font.color.rgb = RGBColor(0x22, 0x22, 0x22); set_cs_font(r)
+    r.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF); set_cs_font(r)
     return p
 
 def bullets(items):
