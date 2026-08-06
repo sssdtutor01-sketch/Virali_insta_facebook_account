@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>परिचय-पत्र - एडवोकेट कप्तान सिंह कुशवाह</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+        :root {
+            --saffron: #FF9933;
+            --green: #138808;
+            --light-saffron: #FFF5EC;
+            --light-green: #E8F5E9;
+            --text-dark: #222222;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* A4 Page Setup */
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            position: relative;
+            box-sizing: border-box;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-top: 15px solid var(--saffron);
+            border-bottom: 15px solid var(--green);
+            padding: 20mm 20mm;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .a4-page {
+                box-shadow: none;
+                margin: 0;
+                border-top: 15px solid var(--saffron) !important;
+                border-bottom: 15px solid var(--green) !important;
+            }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        /* Background Watermark */
+        .watermark {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140mm;
+            opacity: 0.07;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 15px;
+        }
+
+        .party-name {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin: 0 0 5px 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+            text-decoration: underline;
+            text-decoration-color: var(--saffron);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 6px;
+        }
+
+        /* Objective Box */
+        .objective-box {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            background: var(--light-saffron);
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            margin-right: 38mm;
+            border: 1px dashed var(--saffron);
+        }
+
+        /* Photo Box Top-Right */
+        .photo-box {
+            position: absolute;
+            top: 20mm;
+            right: 20mm;
+            width: 32mm;
+            height: 42mm;
+            border: 2px dashed var(--saffron);
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #777;
+            z-index: 2;
+            font-size: 14px;
+        }
+
+        /* Content Area */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: var(--text-dark);
+            font-size: 13.5px;
+        }
+
+        /* Section Styling */
+        .section-title {
+            background-color: var(--light-saffron);
+            border-left: 6px solid var(--saffron);
+            padding: 5px 12px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            page-break-after: avoid;
+        }
+
+        /* Text Rows */
+        .info-table {
+            width: 78%; /* Leaves room for photo */
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .info-table td {
+            padding: 3px 0;
+            vertical-align: top;
+        }
+
+        .info-label {
+            width: 130px;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .info-colon {
+            width: 15px;
+            font-weight: 700;
+        }
+
+        .info-value {
+            font-weight: 600;
+        }
+        
+        .info-value-sub {
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* Special Achievement Box */
+        .special-box {
+            background-color: var(--light-green);
+            border-left: 6px solid var(--green);
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .special-title {
+            color: var(--green);
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .special-text {
+            font-weight: 500;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Bullet Lists */
+        ul {
+            margin: 0 0 10px 0;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        ul li {
+            position: relative;
+            margin-bottom: 6px;
+            text-align: justify;
+            font-weight: 500;
+        }
+
+        ul li::before {
+            content: "■";
+            color: var(--saffron);
+            position: absolute;
+            left: -18px;
+            top: 0px;
+            font-size: 12px;
+        }
+
+        .bold-text {
+            font-weight: 700;
+        }
+
+        /* Social Media & Hobbies */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px 15px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .hobbies {
+            font-weight: 600;
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+        .hobbies span {
+            color: var(--text-dark);
+        }
+
+        /* Photo Appendix Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+
+        .photo-placeholder {
+            aspect-ratio: 4/3;
+            border: 1px solid #ccc;
+            background: rgba(245, 245, 245, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        /* Viral Posts Grid */
+        .viral-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            page-break-inside: avoid;
+            align-items: end;
+        }
+
+        .viral-placeholder {
+            aspect-ratio: 9/16;
+            border: 1px dashed var(--saffron);
+            background: rgba(255, 245, 236, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 11px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .qr-placeholder {
+            aspect-ratio: 1/1;
+            border: 2px solid var(--green);
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            padding: 2px;
+            text-align: center;
+        }
+
+        /* Footer / Sign-off */
+        .sign-off-container {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 14px;
+            page-break-inside: avoid;
+        }
+
+        .slogan {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--saffron);
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .slogan span {
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        <!-- BJP Lotus Watermark -->
+        <img class="watermark" src="bjp-logo.png" alt="Lotus Watermark">
+
+        <!-- Top Right Photo Box -->
+        <div class="photo-box">फोटो</div>
+
+        <!-- Header -->
+        <div class="header">
+            <p class="party-name">भारतीय जनता पार्टी — जिला दतिया (मध्य प्रदेश)</p>
+            <h1 class="title">परिचय — पत्र</h1>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            
+            <div class="objective-box">
+                उद्देश्य: एक समर्पित, अनुशासित एवं संघर्षशील कार्यकर्ता — जिसका एकमात्र लक्ष्य<br>
+                दतिया जिले में संगठन को बूथ-स्तर तक सशक्त कर पार्टी को पुनः विजयी बनाना है।
+            </div>
+            
+            <table class="info-table">
+                <tr>
+                    <td class="info-label">नाम</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">एडवोकेट कप्तान सिंह कुशवाह</td>
+                </tr>
+                <tr>
+                    <td class="info-label">पिता का नाम</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">इंजीनियर रामस्वरूप सिंह कुशवाह<br><span style="font-size: 12.5px; font-weight: 500;">(शासकीय सेवक, लोक निर्माण विभाग)</span></td>
+                </tr>
+                <tr>
+                    <td class="info-label">जन्म तिथि</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">05 जनवरी 1993</td>
+                </tr>
+                <tr>
+                    <td class="info-label">शैक्षणिक योग्यता</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">B.Sc (गणित), M.S.W (समाज कार्य), LL.B</td>
+                </tr>
+                <tr>
+                    <td class="info-label">व्यवसाय</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">
+                        1. श्री गिरिराज जी प्राइवेट ITI कॉलेज, दतिया<br>
+                        2. जिला एवं सत्र न्यायालय (डिस्ट्रिक्ट कोर्ट),<br>
+                        <span style="padding-left: 15px;">दतिया — अधिवक्ता, 4 वर्ष</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info-label">निवास स्थान</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">रिछरा फाटक के बाहर, चिरईटोर माता मंदिर के पास, दतिया</td>
+                </tr>
+                <tr>
+                    <td class="info-label">कार्यालय पता</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">सेवड़ा चुंगी मार्ग, चिरईटोर माता, दतिया</td>
+                </tr>
+                <tr>
+                    <td class="info-label">मोबाइल</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">9584523005</td>
+                </tr>
+                <tr>
+                    <td class="info-label">ईमेल</td>
+                    <td class="info-colon">:</td>
+                    <td class="info-value">singhdatkaptan@gmail.com</td>
+                </tr>
+            </table>
+
+            <div class="special-box">
+                <div class="special-title">** विशेष उपलब्धि — बूथ क्रमांक 156 **</div>
+                <p class="special-text">हाल के दतिया उपचुनाव में पूरे जिले में पराजय के बावजूद, मेरे प्रभार वाले बूथ क्रमांक 156 पर पार्टी को विजय/बढ़त प्राप्त हुई — जो मेरी बूथ-स्तरीय पकड़ का प्रमाण है।</p>
+            </div>
+
+            <div class="section-title">संगठनात्मक अनुभव (12 वर्ष का समर्पण)</div>
+            <ul>
+                <li><span class="bold-text">वर्तमान दायित्व :</span> जिला उपाध्यक्ष, भारतीय जनता युवा मोर्चा, दतिया</li>
+                <li><span class="bold-text">पूर्व दायित्व :</span> जिला मंत्री, भारतीय जनता युवा मोर्चा, दतिया (2020)</li>
+                <li><span class="bold-text">चुनावी दायित्व :</span> पोलिंग प्रभारी — बूथ क्रमांक 156</li>
+                <li>विगत 12 वर्षों से पार्टी में निरंतर सक्रिय एवं समर्पित कार्यकर्ता।</li>
+                <li>मुख्यमंत्री, मंत्रीगण व विधायकों के दतिया आगमन पर निरंतर सहभागिता व समन्वय।</li>
+                <li>बूथ स्तर से जिला स्तर तक संगठन को मज़बूत करने का व्यावहारिक अनुभव।</li>
+            </ul>
+
+            <div class="section-title">संगठन के प्रति अटूट निष्ठा एवं समर्पण</div>
+            <ul>
+                <li>पार्टी के हर दौर में — सुख हो या चुनौती — संगठन के प्रति पूर्ण निष्ठा के साथ निरंतर सक्रिय रहा।</li>
+                <li>23 मई 2026 को माननीय डॉ. नरोत्तम मिश्रा जी द्वारा आयोजित कार्यक्रम में सक्रिय सहभागिता कर, संगठन को और अधिक सशक्त करने हेतु कार्य किया।</li>
+                <li>23 मई 2026 को संगठन को मज़बूत करने का दृढ़ संकल्प लेकर बूथ-स्तर तक जनसंपर्क तेज़ किया।</li>
+                <li>उपचुनाव में पार्टी के प्रत्याशी चयन का पूर्ण सम्मान करते हुए — व्यक्ति नहीं, बल्कि "कमल" एवं विचारधारा को सर्वोपरि रखते हुए — कठिन परिस्थितियों में भी पूरी शक्ति से प्रचार किया।</li>
+                <li>पार्टी हित सर्वोपरि — यही मेरी कार्यशैली एवं पहचान है।</li>
+            </ul>
+
+            <div class="section-title">वैचारिक एवं सामाजिक पृष्ठभूमि</div>
+            <ul>
+                <li>राष्ट्रीय स्वयंसेवक संघ (RSS) के प्रत्येक कार्यक्रम/आयोजन में निरंतर सहभागिता।</li>
+                <li>M.S.W एवं अधिवक्ता होने के नाते जनसेवा व निःशुल्क कानूनी सहायता में सक्रिय।</li>
+                <li>राष्ट्रवादी विचारधारा, पार्टी अनुशासन व संगठन के प्रति पूर्ण निष्ठा।</li>
+            </ul>
+
+            <div class="section-title">दतिया जिले हेतु संकल्प / विज़न</div>
+            <ul>
+                <li>बूथ-स्तर तक संगठन को पुनः सशक्त कर हर कार्यकर्ता को सक्रिय व सम्मानित करना।</li>
+                <li>पार्टी की नीतियों व जनकल्याणकारी योजनाओं को घर-घर पहुँचाना।</li>
+                <li>युवाओं व समाज के हर वर्ग को जोड़कर दतिया को पार्टी का मज़बूत गढ़ बनाना।</li>
+            </ul>
+
+            <div class="section-title">सोशल मीडिया / जनसंपर्क (अनेक पोस्ट व रील वायरल)</div>
+            <div class="social-grid">
+                <div>Instagram : @adv.KaptanSingh</div>
+                <div>Facebook : adv.KaptanSingh1</div>
+                <div>Facebook Page : adv.KaptanSingh</div>
+                <div>Twitter (X) : @adv.KaptanSingh</div>
+                <div>Threads : @adv.KaptanSingh</div>
+            </div>
+            <div class="hobbies">रुचि : <span>समाज सेवा, जनसंपर्क एवं संगठनात्मक कार्य</span></div>
+
+            <div class="section-title">फोटो परिशिष्ट</div>
+            <div class="photo-grid">
+                <div class="photo-placeholder">वरिष्ठ नेताओं के साथ<br>फोटो 1</div>
+                <div class="photo-placeholder">वरिष्ठ नेताओं के साथ<br>फोटो 2</div>
+                <div class="photo-placeholder">वरिष्ठ नेताओं के साथ<br>फोटो 3</div>
+                <div class="photo-placeholder">कार्यक्रम<br>फोटो 4</div>
+                <div class="photo-placeholder">कार्यक्रम<br>फोटो 5</div>
+                <div class="photo-placeholder">कार्यक्रम<br>फोटो 6</div>
+            </div>
+
+            <div class="section-title">वायरल पोस्ट / रील</div>
+            <div class="viral-grid">
+                <div class="viral-placeholder">पोस्ट/रील 1</div>
+                <div class="viral-placeholder">पोस्ट/रील 2</div>
+                <div class="viral-placeholder">पोस्ट/रील 3</div>
+                <div class="viral-placeholder">पोस्ट/रील 4</div>
+                <div class="viral-placeholder">पोस्ट/रील 5</div>
+                <div class="qr-placeholder">
+                    <div>स्कैन करें</div>
+                    <div style="font-size: 18px; margin: 2px 0;">📱</div>
+                    <div>QR कोड</div>
+                </div>
+            </div>
+
+            <div class="sign-off-container">
+                <div>दिनांक: __________</div>
+                <div>स्थान: दतिया</div>
+                <div>हस्ताक्षर: एडवोकेट कप्तान सिंह कुशवाह</div>
+            </div>
+
+            <div class="slogan">जय हिन्द <span>•</span> जय भाजपा</div>
+
+        </div>
+    </div>
+
+</body>
+</html>
