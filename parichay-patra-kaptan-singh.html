@@ -34,7 +34,7 @@
   .photo {
     width: 100px; height: 122px; border:3px solid #FF9933; border-radius:5px;
     background:#fde8cf; display:flex; align-items:center; justify-content:center;
-    font-size:11px; color:#a05a00; text-align:center; overflow:hidden;
+    font-size:11px; color:#a05a00; text-align:center; overflow:hidden; position:relative;
   }
   .photo img { width:100%; height:100%; object-fit:cover; }
   h1.title {
@@ -68,17 +68,28 @@
   .sign .line { border-top:1px solid #333; width:190px; margin-bottom:4px; }
   .slogan { text-align:center; font-weight:800; color:#138808; font-size:16px; margin-top:20px; position:relative; z-index:1; }
 
-  /* Photo annexure page */
+  /* Photo gallery */
   .gallery-title { text-align:center; font-size:22px; color:#c1121f; margin:6px 0 4px; letter-spacing:1px; }
   .gallery-sub { text-align:center; font-size:13px; color:#555; margin-bottom:18px; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
   .card { border:2px solid #FF9933; border-radius:8px; overflow:hidden; background:#fffaf3; }
   .card .imgbox {
-    height:180px; background:#fde8cf; display:flex; align-items:center; justify-content:center;
-    color:#a05a00; font-size:12px; text-align:center;
+    height:165px; background:#fde8cf; display:flex; align-items:center; justify-content:center;
+    color:#a05a00; font-size:12px; text-align:center; position:relative;
   }
-  .card .imgbox img { width:100%; height:100%; object-fit:cover; }
-  .card .cap { padding:8px 10px; font-size:12.5px; color:#333; font-weight:600; text-align:center; }
+  .card .imgbox img { width:100%; height:100%; object-fit:cover; display:block; }
+  .card .ph { padding:10px; font-size:11.5px; color:#a05a00; text-align:center; }
+  .card .cap {
+    padding:7px 10px; font-size:12px; color:#333; font-weight:600; text-align:center;
+    border-top:1px solid #f0d9bd; min-height:34px;
+  }
+  /* QR section */
+  .qrwrap { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .qr { text-align:center; }
+  .qr img { width:120px; height:120px; border:2px solid #FF9933; border-radius:8px; padding:4px; background:#fff; }
+  .qr .lbl { font-size:12.5px; font-weight:700; color:#0b2e59; margin-top:6px; }
+  .qr .sub { font-size:11px; color:#666; }
   @media print { body { background:#fff; padding:0; } .page { box-shadow:none; margin:0; } .pagebreak { page-break-before: always; } }
 </style>
 </head>
@@ -97,9 +108,8 @@
       </div>
     </div>
     <div class="photo">
-      <!-- अपनी फोटो लगाएँ: नीचे की लाइन से <!-- --> हटाकर photo.jpg का नाम डालें -->
-      <!-- <img src="photo.jpg" alt="फोटो"> -->
-      फोटो
+      <img src="photo.jpg" alt="फोटो" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span style="display:none;align-items:center;justify-content:center;width:100%;height:100%;">फोटो<br>(photo.jpg)</span>
     </div>
   </div>
 
@@ -140,7 +150,8 @@
   </table>
   <ul>
     <li><span class="highlight">विगत 12 वर्षों</span> से पार्टी में निरंतर सक्रिय एवं समर्पित कार्यकर्ता।</li>
-    <li>बूथ स्तर से लेकर जिला स्तर तक संगठन को मज़बूत करने का व्यावहारिक अनुभव।</li>
+    <li>माननीय मुख्यमंत्री, मंत्रीगण एवं विधायकों के दतिया आगमन पर निरंतर सक्रिय सहभागिता एवं समन्वय।</li>
+    <li>बूथ स्तर से जिला स्तर तक संगठन को मज़बूत करने का व्यावहारिक अनुभव।</li>
     <li>अनेक चुनावों में बूथ प्रबंधन, जनसंपर्क एवं कार्यकर्ता समन्वय का सफल संचालन।</li>
   </ul>
 
@@ -151,15 +162,10 @@
     <li>राष्ट्रवादी विचारधारा, पार्टी अनुशासन एवं संगठन के प्रति पूर्ण निष्ठा।</li>
   </ul>
 
-  <div class="section-head">दतिया जिले हेतु संकल्प / विज़न</div>
+  <div class="section-head">डिजिटल जनसंपर्क (सोशल मीडिया)</div>
   <ul>
-    <li>बूथ-स्तर तक संगठन को पुनः सशक्त कर प्रत्येक कार्यकर्ता को सक्रिय एवं सम्मानित करना।</li>
-    <li>पार्टी की नीतियों एवं जनकल्याणकारी योजनाओं को घर-घर पहुँचाना।</li>
-    <li>युवाओं व समाज के हर वर्ग को जोड़कर दतिया को पार्टी का मज़बूत गढ़ बनाना।</li>
-    <li>समन्वय, पारदर्शिता एवं आपसी विश्वास के साथ संगठन को एकजुट रखना।</li>
+    <li>सोशल मीडिया पर सक्रिय उपस्थिति — अनेक पोस्ट, रील एवं कार्यक्रम <b>वायरल</b> रहे, जिससे पार्टी की पहुँच घर-घर तक बढ़ी।</li>
   </ul>
-
-  <div class="section-head">सोशल मीडिया / जनसंपर्क</div>
   <table>
     <tr><td class="label">Instagram</td><td class="sep">–</td><td>adv.KaptanSingh</td></tr>
     <tr><td class="label">Facebook</td><td class="sep">–</td><td>adv.KaptanSingh1</td></tr>
@@ -180,35 +186,77 @@
   <div class="slogan">जय हिन्द • जय भाजपा 🚩</div>
 </div>
 
-<!-- ========================= PAGE 2: फोटो परिशिष्ट ========================= -->
+<!-- ========================= PAGE 2: वरिष्ठ नेतृत्व के साथ फोटो ========================= -->
 <div class="page pagebreak">
-  <h1 class="gallery-title">फोटो परिशिष्ट</h1>
-  <div class="gallery-sub">वरिष्ठ नेतृत्व, संगठन एवं सामाजिक कार्यों के साथ सहभागिता</div>
+  <h1 class="gallery-title">वरिष्ठ नेतृत्व के साथ सहभागिता</h1>
+  <div class="gallery-sub">माननीय मुख्यमंत्री, मंत्रीगण, विधायक एवं संगठन के वरिष्ठ पदाधिकारियों के साथ</div>
 
   <div class="grid">
     <div class="card">
-      <div class="imgbox"><!-- <img src="photo1.jpg"> --> फोटो 1</div>
-      <div class="cap">माननीय मुख्यमंत्री जी के साथ — [कार्यक्रम/स्थान, वर्ष]</div>
+      <div class="imgbox"><img src="photo1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo1.jpg</b></div></div>
+      <div class="cap">माननीय मुख्यमंत्री जी के साथ — [स्थान/कार्यक्रम, वर्ष]</div>
     </div>
     <div class="card">
-      <div class="imgbox"><!-- <img src="photo2.jpg"> --> फोटो 2</div>
-      <div class="cap">माननीय मंत्री जी के साथ — [कार्यक्रम/स्थान, वर्ष]</div>
+      <div class="imgbox"><img src="photo2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo2.jpg</b></div></div>
+      <div class="cap">माननीय मंत्री जी के साथ — [स्थान/कार्यक्रम, वर्ष]</div>
     </div>
     <div class="card">
-      <div class="imgbox"><!-- <img src="photo3.jpg"> --> फोटो 3</div>
-      <div class="cap">क्षेत्रीय विधायक जी के साथ — [कार्यक्रम/स्थान, वर्ष]</div>
+      <div class="imgbox"><img src="photo3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo3.jpg</b></div></div>
+      <div class="cap">क्षेत्रीय विधायक जी के साथ — [स्थान/कार्यक्रम, वर्ष]</div>
     </div>
     <div class="card">
-      <div class="imgbox"><!-- <img src="photo4.jpg"> --> फोटो 4</div>
+      <div class="imgbox"><img src="photo4.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo4.jpg</b></div></div>
+      <div class="cap">उपचुनाव प्रचार के दौरान वरिष्ठ नेतृत्व के साथ — [वर्ष]</div>
+    </div>
+    <div class="card">
+      <div class="imgbox"><img src="photo5.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo5.jpg</b></div></div>
       <div class="cap">संगठन बैठक / रैली — [स्थान, वर्ष]</div>
     </div>
     <div class="card">
-      <div class="imgbox"><!-- <img src="photo5.jpg"> --> फोटो 5</div>
-      <div class="cap">सामाजिक सेवा कार्य — [कार्य का नाम, वर्ष]</div>
+      <div class="imgbox"><img src="photo6.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo6.jpg</b></div></div>
+      <div class="cap">सामाजिक सेवा कार्य / जनसंपर्क — [कार्य, वर्ष]</div>
+    </div>
+  </div>
+
+  <div class="slogan">जय हिन्द • जय भाजपा 🚩</div>
+</div>
+
+<!-- ========================= PAGE 3: वायरल कार्य + QR कोड ========================= -->
+<div class="page pagebreak">
+  <h1 class="gallery-title">वायरल पोस्ट / रील एवं कार्यक्रम</h1>
+  <div class="gallery-sub">सोशल मीडिया पर लोकप्रिय कार्य — QR स्कैन कर सीधे देखें</div>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="imgbox"><img src="viral1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">वायरल पोस्ट<br><b>viral1.jpg</b></div></div>
+      <div class="cap">[विषय / व्यूज़]</div>
     </div>
     <div class="card">
-      <div class="imgbox"><!-- <img src="photo6.jpg"> --> फोटो 6</div>
-      <div class="cap">युवा मोर्चा कार्यक्रम — [स्थान, वर्ष]</div>
+      <div class="imgbox"><img src="viral2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">वायरल रील<br><b>viral2.jpg</b></div></div>
+      <div class="cap">[विषय / व्यूज़]</div>
+    </div>
+    <div class="card">
+      <div class="imgbox"><img src="viral3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">कार्यक्रम<br><b>viral3.jpg</b></div></div>
+      <div class="cap">[विषय / व्यूज़]</div>
+    </div>
+  </div>
+
+  <div class="section-head" style="margin-top:24px;">📱 QR कोड — स्कैन कर मेरे कार्य देखें</div>
+  <div class="qrwrap">
+    <div class="qr">
+      <img src="qr-instagram.png" alt="Instagram QR">
+      <div class="lbl">Instagram</div>
+      <div class="sub">adv.KaptanSingh</div>
+    </div>
+    <div class="qr">
+      <img src="qr-facebook.png" alt="Facebook QR">
+      <div class="lbl">Facebook</div>
+      <div class="sub">adv.KaptanSingh1</div>
+    </div>
+    <div class="qr">
+      <img src="qr-twitter.png" alt="Twitter QR">
+      <div class="lbl">Twitter (X)</div>
+      <div class="sub">adv.KaptanSingh</div>
     </div>
   </div>
 
