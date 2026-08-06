@@ -10,7 +10,7 @@
   body {
     font-family: "Nirmala UI", "Mangal", "Noto Sans Devanagari", Arial, sans-serif;
     color: #1a1a1a; margin: 0; padding: 20px; background: #ececec;
-    line-height: 1.5;
+    line-height: 1.55;
   }
   .page {
     background: #fff; max-width: 800px; margin: 0 auto 26px; padding: 30px 40px;
@@ -55,7 +55,7 @@
     padding:8px 10px; margin:18px 0 6px; border-left:5px solid #FF9933; border-radius:3px; position:relative; z-index:1;
   }
   ul { margin:6px 0 6px 4px; padding-left:20px; position:relative; z-index:1; }
-  li { font-size:14px; margin:4px 0; }
+  li { font-size:14px; margin:5px 0; }
   .highlight { background:#fff3a3; padding:0 3px; border-radius:2px; font-weight:600; }
   .winbox {
     background:linear-gradient(90deg,#fff8e1,#e8f5e9); border:2px solid #138808; border-radius:8px;
@@ -63,28 +63,30 @@
   }
   .winbox .h { font-weight:800; color:#0a7d0a; font-size:15px; margin-bottom:4px; }
   .winbox .b { font-size:13.5px; color:#1a1a1a; }
+  .loyalbox {
+    background:linear-gradient(90deg,#fff4e6,#fff9ef); border:2px solid #FF9933; border-radius:8px;
+    padding:6px 16px 10px; margin:6px 0 4px; position:relative; z-index:1;
+  }
   .footer { margin-top:24px; display:flex; justify-content:space-between; align-items:flex-end; position:relative; z-index:1; }
   .sign { text-align:center; font-size:13px; }
   .sign .line { border-top:1px solid #333; width:190px; margin-bottom:4px; }
   .slogan { text-align:center; font-weight:800; color:#138808; font-size:16px; margin-top:20px; position:relative; z-index:1; }
 
-  /* Photo gallery */
   .gallery-title { text-align:center; font-size:22px; color:#c1121f; margin:6px 0 4px; letter-spacing:1px; }
   .gallery-sub { text-align:center; font-size:13px; color:#555; margin-bottom:18px; }
   .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
   .card { border:2px solid #FF9933; border-radius:8px; overflow:hidden; background:#fffaf3; }
   .card .imgbox {
-    height:165px; background:#fde8cf; display:flex; align-items:center; justify-content:center;
+    height:150px; background:#fde8cf; display:flex; align-items:center; justify-content:center;
     color:#a05a00; font-size:12px; text-align:center; position:relative;
   }
   .card .imgbox img { width:100%; height:100%; object-fit:cover; display:block; }
-  .card .ph { padding:10px; font-size:11.5px; color:#a05a00; text-align:center; }
+  .card .ph { padding:10px; font-size:11px; color:#a05a00; text-align:center; }
   .card .cap {
-    padding:7px 10px; font-size:12px; color:#333; font-weight:600; text-align:center;
-    border-top:1px solid #f0d9bd; min-height:34px;
+    padding:7px 10px; font-size:11.5px; color:#333; font-weight:600; text-align:center;
+    border-top:1px solid #f0d9bd; min-height:32px;
   }
-  /* QR section */
   .qrwrap { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:6px; }
   .qr { text-align:center; }
   .qr img { width:120px; height:120px; border:2px solid #FF9933; border-radius:8px; padding:4px; background:#fff; }
@@ -95,7 +97,7 @@
 </head>
 <body>
 
-<!-- ========================= PAGE 1: परिचय-पत्र ========================= -->
+<!-- ========================= PAGE 1 ========================= -->
 <div class="page">
   <div class="watermark">BJP</div>
 
@@ -117,7 +119,7 @@
   <hr class="rule">
 
   <div class="objective">
-    "एक समर्पित, अनुशासित एवं संघर्षशील कार्यकर्ता — जिसका लक्ष्य दतिया जिले में
+    "एक समर्पित, अनुशासित एवं संघर्षशील कार्यकर्ता — जिसका एकमात्र लक्ष्य दतिया जिले में
     संगठन को बूथ-स्तर तक सशक्त कर पार्टी को पुनः विजयी बनाना है।"
   </div>
 
@@ -155,16 +157,27 @@
     <li>अनेक चुनावों में बूथ प्रबंधन, जनसंपर्क एवं कार्यकर्ता समन्वय का सफल संचालन।</li>
   </ul>
 
+  <div class="section-head">🚩 संगठन के प्रति अटूट निष्ठा एवं समर्पण</div>
+  <div class="loyalbox">
+  <ul>
+    <li>पार्टी की पराजय के कठिन दौर में भी संगठन के प्रति पूर्ण निष्ठा एवं मनोबल बनाए रखा।</li>
+    <li><b>23 मार्च 2026</b> को माननीय <b>डॉ. नरोत्तम मिश्रा जी</b> द्वारा आयोजित कार्यक्रम में सक्रिय सहभागिता कर, संगठन को पुनः सशक्त करने हेतु स्वयं को समर्पित किया।</li>
+    <li><b>23 मई 2026</b> को संगठन को पुनर्जीवित करने का दृढ़ <span class="highlight">संकल्प</span> लिया और निरंतर सक्रिय रहा।</li>
+    <li>उपचुनाव में पार्टी द्वारा एक <b>नया चेहरा</b> प्रत्याशी घोषित किए जाने के बावजूद — <i>व्यक्ति नहीं, बल्कि "कमल" एवं विचारधारा को सर्वोपरि रखते हुए</i> — कठिन परिस्थितियों में भी पूरी शक्ति से प्रचार एवं जनसंपर्क किया।</li>
+    <li><b>पार्टी हित सर्वोपरि</b> — यही मेरी कार्यशैली एवं पहचान है।</li>
+  </ul>
+  </div>
+
   <div class="section-head">वैचारिक एवं सामाजिक पृष्ठभूमि</div>
   <ul>
     <li><span class="highlight">राष्ट्रीय स्वयंसेवक संघ (RSS)</span> के प्रत्येक कार्यक्रम एवं आयोजन में निरंतर सक्रिय सहभागिता।</li>
-    <li>M.S.W (समाज कार्य) एवं अधिवक्ता होने के नाते जनता की सेवा एवं निःशुल्क कानूनी सहायता में सक्रिय।</li>
+    <li>M.S.W एवं अधिवक्ता होने के नाते जनता की सेवा एवं निःशुल्क कानूनी सहायता में सक्रिय।</li>
     <li>राष्ट्रवादी विचारधारा, पार्टी अनुशासन एवं संगठन के प्रति पूर्ण निष्ठा।</li>
   </ul>
 
   <div class="section-head">डिजिटल जनसंपर्क (सोशल मीडिया)</div>
   <ul>
-    <li>सोशल मीडिया पर सक्रिय उपस्थिति — अनेक पोस्ट, रील एवं कार्यक्रम <b>वायरल</b> रहे, जिससे पार्टी की पहुँच घर-घर तक बढ़ी।</li>
+    <li>सोशल मीडिया पर सशक्त उपस्थिति — अनेक पोस्ट, रील एवं कार्यक्रम <b>वायरल</b> रहे, जिससे पार्टी की पहुँच घर-घर तक बढ़ी।</li>
   </ul>
   <table>
     <tr><td class="label">Instagram</td><td class="sep">–</td><td>adv.KaptanSingh</td></tr>
@@ -186,7 +199,7 @@
   <div class="slogan">जय हिन्द • जय भाजपा 🚩</div>
 </div>
 
-<!-- ========================= PAGE 2: वरिष्ठ नेतृत्व के साथ फोटो ========================= -->
+<!-- ========================= PAGE 2 ========================= -->
 <div class="page pagebreak">
   <h1 class="gallery-title">वरिष्ठ नेतृत्व के साथ सहभागिता</h1>
   <div class="gallery-sub">माननीय मुख्यमंत्री, मंत्रीगण, विधायक एवं संगठन के वरिष्ठ पदाधिकारियों के साथ</div>
@@ -198,11 +211,11 @@
     </div>
     <div class="card">
       <div class="imgbox"><img src="photo2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo2.jpg</b></div></div>
-      <div class="cap">माननीय मंत्री जी के साथ — [स्थान/कार्यक्रम, वर्ष]</div>
+      <div class="cap">माननीय डॉ. नरोत्तम मिश्रा जी के साथ — [कार्यक्रम, वर्ष]</div>
     </div>
     <div class="card">
       <div class="imgbox"><img src="photo3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo3.jpg</b></div></div>
-      <div class="cap">क्षेत्रीय विधायक जी के साथ — [स्थान/कार्यक्रम, वर्ष]</div>
+      <div class="cap">क्षेत्रीय विधायक / मंत्री जी के साथ — [स्थान, वर्ष]</div>
     </div>
     <div class="card">
       <div class="imgbox"><img src="photo4.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">यहाँ फोटो आएगी<br><b>photo4.jpg</b></div></div>
@@ -221,7 +234,7 @@
   <div class="slogan">जय हिन्द • जय भाजपा 🚩</div>
 </div>
 
-<!-- ========================= PAGE 3: वायरल कार्य + QR कोड ========================= -->
+<!-- ========================= PAGE 3 ========================= -->
 <div class="page pagebreak">
   <h1 class="gallery-title">वायरल पोस्ट / रील एवं कार्यक्रम</h1>
   <div class="gallery-sub">सोशल मीडिया पर लोकप्रिय कार्य — QR स्कैन कर सीधे देखें</div>
@@ -236,7 +249,15 @@
       <div class="cap">[विषय / व्यूज़]</div>
     </div>
     <div class="card">
-      <div class="imgbox"><img src="viral3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">कार्यक्रम<br><b>viral3.jpg</b></div></div>
+      <div class="imgbox"><img src="viral3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">वायरल रील<br><b>viral3.jpg</b></div></div>
+      <div class="cap">[विषय / व्यूज़]</div>
+    </div>
+    <div class="card">
+      <div class="imgbox"><img src="viral4.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">वायरल पोस्ट<br><b>viral4.jpg</b></div></div>
+      <div class="cap">[विषय / व्यूज़]</div>
+    </div>
+    <div class="card">
+      <div class="imgbox"><img src="viral5.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="ph" style="display:none;">कार्यक्रम<br><b>viral5.jpg</b></div></div>
       <div class="cap">[विषय / व्यूज़]</div>
     </div>
   </div>
